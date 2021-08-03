@@ -1,12 +1,51 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const Task = () => {
   return (
-    <View>
-      <Text>Task component</Text>
+    <View style={styles.item}>
+      <View style={styles.itemLeft}>
+        <TouchableOpacity style={styles.square}></TouchableOpacity>
+        <Text style={styles.itemText}>Task component</Text>
+      </View>
+      <View style={styles.circular}></View>
     </View>
   );
 };
 
 export default Task;
+
+const styles = StyleSheet.create({
+  item: {
+    backgroundColor: "#FFF",
+    padding: 15,
+    borderRadius: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 20,
+  },
+  itemLeft: {
+    flexDirection: "row",
+    alignItems: "center",
+    flexWrap: "wrap",
+  },
+  itemText: {
+    maxWidth: "80%",
+  },
+  circular: {
+    width: 14,
+    height: 12,
+    borderColor: "#55BCF6",
+    borderWidth: 2,
+    borderRadius: 5,
+  },
+  square: {
+    width: 24,
+    height: 24,
+    backgroundColor: "#55BCF6",
+    opacity: 0.4,
+    borderRadius: 5,
+    marginRight: 15,
+  },
+});

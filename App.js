@@ -9,6 +9,9 @@ export default function App() {
         <Text style={styles.sectionTitle}>Today task's</Text>
         <View style={styles.items}>
           <Task />
+          <Task />
+          <Task />
+          <Task />
         </View>
       </View>
     </View>
