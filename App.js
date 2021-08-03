@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  KeyboardAvoidingView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import Task from "./components/Task";
 
 export default function App() {
@@ -11,10 +18,13 @@ export default function App() {
           <Task text="Task 1" />
           <Task text="Task 2" />
           <Task text="Task 3" />
-          <Task text="Task 4" />
-          <Task text="Task 5" />
         </View>
       </View>
+
+      <KeyboardAvoidingView style={styles.addTaskWrapper}>
+        <TextInput style={styles.input} placeholder="Add task ..." />
+        <Button title="Add" />
+      </KeyboardAvoidingView>
     </View>
   );
 }
@@ -33,4 +43,22 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   items: {},
+  addTaskWrapper: {
+    position: "absolute",
+    bottom: 60,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+  input: {
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+    backgroundColor: "#FFF",
+    borderRadius: 10,
+    width: 250,
+    height: 50,
+    borderWidth: 1,
+    borderColor: "#C0C0C0",
+  },
 });
